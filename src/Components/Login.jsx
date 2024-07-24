@@ -12,7 +12,7 @@ import { auth } from "../utils/firebase";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser, removeUser } from "../Redux/UserSlice";
-import { NETFLIX_BG_POSTER, USERICON } from "../utils/constants";
+import { USERICON } from "../utils/constants";
 
 const Login = () => {
   const [isLoginPage, setIsLoginPage] = useState(true);
@@ -49,7 +49,7 @@ const Login = () => {
 
           updateProfile(auth.currentUser, {
             displayName: name.current.value,
-            photoURL: USERICON,
+            photoURL: "/User_Icon.jpg",
           })
             .then(() => {
               const { uid, email, displayName, photoURL } = auth.currentUser;
@@ -188,7 +188,7 @@ const Login = () => {
         className=" absolute top-0 left-0 object-cover min-w-full h-screen bg-black bg-blend-darken"
         alt="bg-movies"
         loading="lazy"
-        src={NETFLIX_BG_POSTER}
+        src="/Netflix_Bg.jpg"
       ></img>
     </div>
   );

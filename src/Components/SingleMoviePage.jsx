@@ -3,7 +3,6 @@ import { useParams, useNavigate } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
 import {
   API_OPTIONS,
-  NETFLIX_BG_POSTER,
   TMDB_PIC_LINK,
 } from "../utils/constants";
 import { useDispatch, useSelector } from "react-redux";
@@ -51,10 +50,10 @@ const SingleMoviePage = () => {
   return (
     <div className=" min-h-screen  relative flex flex-col  items-center ">
       <img
-        className=" fixed top-0 left-0 object-cover min-w-full h-screen bg-black bg-blend-darken -z-[1]"
+        className=" fixed top-0 left-0 object-cover min-w-full min-h-screen h-full bg-black bg-blend-darken -z-[1]"
         alt="bg-movies"
         loading="lazy"
-        src={NETFLIX_BG_POSTER}
+        src="/Netflix_Bg.jpg"
       ></img>
       <button
         onClick={() => {
@@ -68,7 +67,7 @@ const SingleMoviePage = () => {
       {isShimmer ? (
         <Shimmer_SingleMov></Shimmer_SingleMov>
       ) : (
-        <div className=" text-white bg-black bg-opacity-80 min-h-screen w-11/12 py-4 md:px-10 flex flex-col-reverse md:flex-row justify-evenly items-center">
+        <div className=" text-white bg-black bg-opacity-80 min-h-screen w-11/12 py-4 md:px-10 flex flex-col-reverse md:flex-row justify-evenly items-center flex-wrap">
           <div className=" flex  flex-col w-full md:max-w-[60%] px-20 gap-8 relative py-7 md:py-0">
             <h1 className=" text-white text-4xl md:text-[400%] font-bold">
               {moviedata?.original_title || moviedata?.title}
@@ -76,7 +75,7 @@ const SingleMoviePage = () => {
             <h2 className=" text-white text-2xl md:text-[150%] opacity-85">
               {moviedata?.overview}
             </h2>
-            <div className=" flex gap-1 text-3xl font-semibold opacity-85">
+            <div className=" flex flex-wrap gap-1 text-3xl font-semibold opacity-85">
               Geners :
               {moviedata?.genres?.map((d,i) => (
                 <h3 key={i}>{d?.name},</h3>

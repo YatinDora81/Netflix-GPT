@@ -63,7 +63,7 @@ const Header = () => {
       <div className="bg-gradient-to-b from-black to-transparent z-[2] absolute  w-full">
         <img
         className=" w-80 ml-[7vw] p-1   "
-        src={NETFLIX_LOGO}
+        src={ "/Netflix_Logo.png" ||NETFLIX_LOGO}
       ></img>
       </div>
     );
@@ -76,33 +76,33 @@ const Header = () => {
 
   return (
     <div className=" absolute w-full bg-gradient-to-b from-black  max-h-40 z-[100]">
-      <div className="flex md:flex-row flex-col  md:justify-between items-center w-11/12 mx-auto">
+      <div className="flex md:flex-row flex-col  md:justify-between items-center w-11/12 mx-auto ">
         <img
-          className="z-[2]  w-80  p-1  "
-          src={NETFLIX_LOGO}
+          className="z-[2] w-52  md:w-80  p-1  "
+          src={ "Netflix_Logo.png" || NETFLIX_LOGO}
         ></img>
 
         <div className="flex gap-1 items-center">
           {
             isHome && (
-              <select value={currLang} onChange={(e)=>{langChangeHandler(e)}} className=" p-3 bg-gray-900 text-xl mr-2 text-white rounded-xl">
+              <select value={currLang} onChange={(e)=>{langChangeHandler(e)}} className=" p-1 md:p-3 bg-gray-900 text-xl md:mr-2 text-white rounded-xl">
                 {
                   supportedLanguage.map( (lang,i)=><option key={i} value={lang?.identifier} >{lang?.name}</option>)
                 }
               </select>
             )
           }
-          <button onClick={handleGptChange} className= {` bg-purple-800 text-white px-4 h-16 hover:bg-opacity-80 rounded-lg mr-2 font-bold bg-opacity-70 ${isHome && "px-9"} `} >{isHome ? "Home" : "GPT Search"}</button>
+          <button onClick={handleGptChange} className= {` bg-purple-800 text-white px-4 h-10 md:h-16 hover:bg-opacity-80 rounded-lg mr-2 font-bold bg-opacity-70 ${isHome && "px-9"} `} >{isHome ? "Home" : "GPT Search"}</button>
           <img
-            className=" w-16 h-16 object-cover "
-            src={user?.photoURL}
+            className=" w-12 h-12 md:w-16 md:h-16 object-cover "
+            src={ "/User_Icon.jpg" || user?.photoURL}
             alt="yoyo"
           ></img>
           <div className="flex flex-col justify-center">
             <h1 className="text-xl text-white">{user?.displayName}</h1>
             <button
               onClick={logoutHandler}
-              className=" bg-red-600 text-white font-bold px-4 py-1"
+              className=" bg-red-600 text-white font-bold px-4 py-0 md:py-1"
             >
               SignOut
             </button>
