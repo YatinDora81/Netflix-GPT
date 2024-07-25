@@ -185,7 +185,7 @@ const Login = () => {
       </div>
 
       <img
-        className=" absolute top-0 left-0 object-cover min-w-full h-screen bg-black bg-blend-darken"
+        className=" absolute top-0 left-0 object-cover min-w-full min-h-screen h-fit bg-black bg-blend-darken"
         alt="bg-movies"
         loading="lazy"
         src="/Netflix_Bg.jpg"

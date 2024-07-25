@@ -60,7 +60,7 @@ const Header = () => {
 
   if (!user) {
     return (
-      <div className="bg-gradient-to-b from-black to-transparent z-[2] absolute  w-full">
+      <div className="bg-gradient-to-b from-black to-transparent z-[2] absolute  w-[100%]">
         <img
         className=" w-80 ml-[7vw] p-1   "
         src={ "/Netflix_Logo.png" ||NETFLIX_LOGO}
